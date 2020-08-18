@@ -77,8 +77,8 @@ class myDataset(object):
 
 
 if __name__ == "__main__":
-    dataset = myDataset('/media/txtx/f19f1c88-52d1-4fee-9746-dd97d2c44beb/data/train')
-    class_names = sorted(os.listdir('/media/txtx/f19f1c88-52d1-4fee-9746-dd97d2c44beb/data/train'))
+    dataset = myDataset(cfgs.TRAIN_IMGPATH)
+    class_names = sorted(os.listdir(cfgs.TRAIN_IMGPATH))
     for k in range(10):
         print(k)
         imgs, labels = dataset.gen_data(cfgs.BATCH_SIZE, True)
