@@ -51,7 +51,7 @@ with tf.compat.v1.Session() as sess:
         print('***'*20)
         print('model params restore from imagenets')
         print('***'*20)
-        checkpoint_path = '/media/txtx/Seagate Backup Plus Drive/付磊--work/tf_pretrained_models/resnet_v1_101.ckpt'
+        checkpoint_path = 'tf_pretrained_models/resnet_v1_101.ckpt'
         model_variables = slim.get_model_variables()
         restore_variables = {}
         for var in model_variables:
