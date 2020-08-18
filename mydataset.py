@@ -77,11 +77,11 @@ class myDataset(object):
 
 
 if __name__ == "__main__":
-    dataset = myDataset('/media/txtx/f19f1c88-52d1-4fee-9746-dd97d2c44beb/data/cat_vs_dog/kaggle/train_keras')
-    class_names = sorted(os.listdir('/media/txtx/f19f1c88-52d1-4fee-9746-dd97d2c44beb/data/cat_vs_dog/kaggle/train_keras'))
+    dataset = myDataset('/media/txtx/f19f1c88-52d1-4fee-9746-dd97d2c44beb/data/train')
+    class_names = sorted(os.listdir('/media/txtx/f19f1c88-52d1-4fee-9746-dd97d2c44beb/data/train'))
     for k in range(10):
         print(k)
-        imgs, labels = dataset.gen_data(cfgs.BATCH_SIZE, False)
+        imgs, labels = dataset.gen_data(cfgs.BATCH_SIZE, True)
         for i in range(imgs.shape[0]):
             img = imgs[i]
             img = img*255.0
