@@ -11,7 +11,7 @@ class myDataset(object):
         self.index = 0
 
         datasets = []
-        for sublabel, subdir in enumerate(sorted(os.listdir(self.imgdir))):
+        for sublabel, subdir in enumerate(self.label):
             for imgname in os.listdir(os.path.join(self.imgdir, subdir)):
                 datasets.append([os.path.join(self.imgdir, subdir, imgname), sublabel])
         self.datasets = datasets
