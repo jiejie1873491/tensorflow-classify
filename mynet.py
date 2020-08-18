@@ -37,9 +37,6 @@ class myNet(object):
 
         # Calculate focal loss
         loss = weight * cross_entropy
-
-        # # mean the losses in mini_batch
-        # focal_loss = tf.reduce_mean(loss)
         
         return loss
 
@@ -66,7 +63,6 @@ class myNet(object):
         return tf.reduce_mean(loss)
             
     def compute_acc(self, labels, logits):
-        # acc = tf.cast(tf.equal(tf.argmax(net, axis=1), tf.to_int64(labels)), tf.float32)
         acc = tf.cast(tf.equal(tf.argmax(logits, axis=1), tf.argmax(labels, axis=1)), tf.float32)
         acc = tf.reduce_mean(acc)
         
